@@ -1,20 +1,28 @@
 import './App.scss';
 import {BrowserRouter as Router,Switch,Route,Routes ,Link} from "react-router-dom";
-//import CardHomework from './components/CardHomework' ; 
-//import Avatar from './components/Avatar/Avatar';
+
+import routes from './config/routes';
+
+console.log(routes);
 
 function App() {
   return (
-    <div className="App">
-      
-      
-      <h1>Aca Hay algo ....</h1>
 
-         
-        
-      
-     
-    </div>
+    <Router>
+        <Routes>
+            {routes.map((route,index) => (
+              <Route 
+                key={index} 
+                path={route.path} 
+                element={<route.layout>
+                  <route.component/>
+                </route.layout>
+                            
+                        }
+              />
+            ))}
+        </Routes>
+    </Router>
   );
 }
 
