@@ -1,13 +1,15 @@
-const { response } = require('express');
 const mongoose = require('mongoose');
 
 const app = require('./app'); 
 
 const {API_VERSION , IP_SERVER, PORT_DB,PORT_SERVER} = require('./config'); 
 
-//CONFIGURAMOS CONEXION Y NOMBRAMOS LA BD 
-mongoose.connect(`mongodb://${IP_SERVER}:${PORT_DB}/ToDoReact` , 
-{useNewUrlParser : true},(error,response) => {
+//creamos un string para hacer la conexion 
+const connectionString = `mongodb://${IP_SERVER}:${PORT_DB}/ToDoReact`;
+
+mongoose.connect( connectionString , 
+    
+    (error,response) => {
 
     if (error) {
         throw error ;

@@ -1,6 +1,8 @@
 import { Layout } from 'antd';
 import React from 'react';
 
+import './LayoutSign.scss'
+
 export default function LayoutSign(props) {
 
 
@@ -9,10 +11,10 @@ export default function LayoutSign(props) {
   
   
     return (
-      <Layout>
-            <Header>Header Sign ...</Header>
-            <Content>{children}</Content>
-            <Footer>Footer ...</Footer>
+      <Layout className='layout-sign'>
+            <Header className='layout-sign__header'>Header Sign ...</Header>
+            <Content className='layout-sign__content'>{children}</Content>
+            <Footer className='layout-sign__footer'>Footer Sign  ...</Footer>
       </Layout>
     )
 }
