@@ -6,7 +6,7 @@ function newTask(request,response){
 
     const task = new Task();
 
-    const {description,title,date} = request.body ; 
+    const {description,title} = request.body ; 
 
     task.status = "pending";
     task.title= title;
@@ -34,8 +34,21 @@ function newTask(request,response){
 
 } 
 
+function getTasks(request ,response){
+
+    Task.find().then( tasks => {
+        if(!tasks){
+            response.status(404).send({message: "No se han encontrado tareas"})
+        } else {
+            response.status(200).send({tasks})
+        }
+    })
+
+}
+
 
 
 module.exports = {
-    newTask
+    newTask,
+    getTasks
 }

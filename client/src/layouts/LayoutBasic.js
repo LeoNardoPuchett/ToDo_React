@@ -16,17 +16,17 @@ const {Header,Content,Footer} = Layout ;
 const user = null ; 
 
 //para que nos devuelva al login si no hay usuario logeado 
-if (!user) {
+//if (!user) {
 
-  return (
-    <> 
-  <Routes>
-    <Route path='/todo' element = {SignIn}/>
-  </Routes>
-  <Navigate  to ='/login'/>
-    </>
-  )
-}
+ // return (
+   // <> 
+ // <Routes>
+  //  <Route path='/todo' element = {SignIn}/>
+ // </Routes>
+ // <Navigate  to ='/login'/>
+ //   </>
+ // )
+//}
 
 
 
